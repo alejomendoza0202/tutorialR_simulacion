@@ -87,11 +87,11 @@ La función de __break__ es __interrumpir__ un bucle cuando se cumple una condic
 a <- 1
 for (i in 1:10){
   a <- a + 1
-  cat("Sigue, a tiene el valor de: ", a, "\n")
    if (a == 4){
      cat("Se rompe el bucle, a tiene el valor de:", a)
      break
    }
+  cat("Sigue, a tiene el valor de: ", a, "\n")
 }
   
 ```
