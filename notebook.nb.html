@@ -1797,19 +1797,298 @@ summary {
 
 
 <!-- rnb-text-begin -->
+<div id="estructuras-de-control" class="section level1">
+<h1>Estructuras de control</h1>
+<p>Las estructuras de control, son una de las partes más fundamentales en los lenguajes de programación, debido a qué, como su nombre lo indica, gracias a ellas se puede controlar el código de la manera que el usuario deseé. En esta sección se verán las estructuras más conocidas y útiles.</p>
+<div id="if-else" class="section level2">
+<h2>If, else</h2>
+<p>Como ya es conocido, la estructura <strong>if</strong> es usada cuando deseamos que una operación se ejecute únicamente si se cumple una condición especificada.</p>
+<p>Por otro lado, la sentencia <strong>else</strong> es usada para indicar que se debe hacer si la condición <strong>if</strong> no se cumple.</p>
+<div id="ejemplo" class="section level3">
+<h3>Ejemplo</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jU2kgc2UgY3VtcGxlIGxhIGNvbmRpY2nDs24gaWZcbmlmKDEwPjEpe1xuICBcIlZlcmRhZGVyb1wiXG59IGVsc2Uge1xuICBcIkZhbHNvXCJcbn1cbmBgYCJ9 -->
+<pre class="r"><code>
+#Si se cumple la condición if
+if(10&gt;1){
+  &quot;Verdadero&quot;
+} else {
+  &quot;Falso&quot;
+}</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-plot-begin eyJoZWlnaHQiOjQwNC4yMDI3LCJ3aWR0aCI6NjU0LCJzaXplX2JlaGF2aW9yIjowLCJjb25kaXRpb25zIjpbXX0= -->
-<p><img src="data:image/png;base64,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" /></p>
-<!-- rnb-plot-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVmVyZGFkZXJvXCJcbiJ9 -->
+<pre><code>[1] &quot;Verdadero&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1NpIG5vIHNlIGN1bXBsZSBsYSBjb25kaWNpw7NuIGlmXG5pZigxOTwxKXtcbiAgXCJWZXJkYWRlcm9cIlxufSBlbHNlIHtcbiAgXCJGYWxzb1wiXG59XG5gYGAifQ== -->
+<pre class="r"><code>#Si no se cumple la condición if
+if(19&lt;1){
+  &quot;Verdadero&quot;
+} else {
+  &quot;Falso&quot;
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiRmFsc29cIlxuIn0= -->
+<pre><code>[1] &quot;Falso&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="for" class="section level2">
+<h2>For</h2>
+<p>Esta estructura, permite ejecutar código en loop, realizando la misma operación para cada elemento de un conjunto de datos.</p>
+<div id="ejemplo-1" class="section level3">
+<h3>Ejemplo</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0xlIHJlc3RhIDEwIHVuaWRhZGVzIGEgY2FkYSBlbGVtZW50byBkZWwgdmVjdG9yXG52ZWN0b3IgPC0gMjoxMFxuZm9yKG51bWVybyBpbiB2ZWN0b3Ipe1xuICBwcmludChudW1lcm8tMTApXG59XG5gYGAifQ== -->
+<pre class="r"><code>#Le resta 10 unidades a cada elemento del vector
+vector &lt;- 2:10
+for(numero in vector){
+  print(numero-10)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIC04XG5bMV0gLTdcblsxXSAtNlxuWzFdIC01XG5bMV0gLTRcblsxXSAtM1xuWzFdIC0yXG5bMV0gLTFcblsxXSAwXG4ifQ== -->
+<pre><code>[1] -8
+[1] -7
+[1] -6
+[1] -5
+[1] -4
+[1] -3
+[1] -2
+[1] -1
+[1] 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Por otro lado, se puede usar otra estructura</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1xuI0ltcHJpbWUgbG9zIGVsZW1lbnRvcyBkZSB1biB2ZWN0b3IgYWwgY3VhZHJhZG9cbnZlY3RvciA8LSAxOjVcbmZvciAoaSBpbiB2ZWN0b3Ipe1xuICBwcmludCh2ZWN0b3JbaV1eMilcbn1cbmBgYCJ9 -->
+<pre class="r"><code>#
+#Imprime los elementos de un vector al cuadrado
+vector &lt;- 1:5
+for (i in vector){
+  print(vector[i]^2)
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcblsxXSA0XG5bMV0gOVxuWzFdIDE2XG5bMV0gMjVcbiJ9 -->
+<pre><code>[1] 1
+[1] 4
+[1] 9
+[1] 16
+[1] 25</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="while" class="section level2">
+<h2>While</h2>
+<p>Es una estructura de tipo bucle, la cual ocurre mientras una condición sea verdadera.</p>
+<div id="ejemplo-2" class="section level3">
+<h3>Ejemplo</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW1icmFsIDwtIDJcbm5vdGFfU2VtZXN0cmUgPC0gMFxuZXN0dWRpYXIgPC0gMVxuXG53aGlsZShub3RhX1NlbWVzdHJlPD11bWJyYWwpe1xuICBjYXQoXCJWYSBwZXJkaWVuZG8gbGEgbWF0ZXJpYSwgbm90YSA9XCIsIG5vdGFfU2VtZXN0cmUsIFwiXFxuXCIpXG4gIG5vdGFfU2VtZXN0cmUgPC0gbm90YV9TZW1lc3RyZSArIGVzdHVkaWFyXG59XG5gYGAifQ== -->
+<pre class="r"><code>umbral &lt;- 2
+nota_Semestre &lt;- 0
+estudiar &lt;- 1
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCnBsb3QoY2FycykNCmBgYA0KDQoNCg==</div>
+while(nota_Semestre&lt;=umbral){
+  cat(&quot;Va perdiendo la materia, nota =&quot;, nota_Semestre, &quot;\n&quot;)
+  nota_Semestre &lt;- nota_Semestre + estudiar
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVmEgcGVyZGllbmRvIGxhIG1hdGVyaWEsIG5vdGEgPSAwIFxuVmEgcGVyZGllbmRvIGxhIG1hdGVyaWEsIG5vdGEgPSAxIFxuVmEgcGVyZGllbmRvIGxhIG1hdGVyaWEsIG5vdGEgPSAyIFxuIn0= -->
+<pre><code>Va perdiendo la materia, nota = 0 
+Va perdiendo la materia, nota = 1 
+Va perdiendo la materia, nota = 2 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+<div id="break" class="section level2">
+<h2>Break</h2>
+<p>La función de <strong>break</strong> es <strong>interrumpir</strong> un bucle cuando se cumple una condición.</p>
+<div id="ejemplo-3" class="section level3">
+<h3>Ejemplo</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1xuIyBTZSByb21wZSBlbCBidWNsZSBjdWFuZG8gYSA9IDRcbmEgPC0gMVxuZm9yIChpIGluIDE6MTApe1xuICBhIDwtIGEgKyAxXG4gIGNhdChcIlNpZ3VlLCBhIHRpZW5lIGVsIHZhbG9yIGRlOiBcIiwgYSwgXCJcXG5cIilcbiAgIGlmIChhID09IDQpe1xuICAgICBjYXQoXCJTZSByb21wZSBlbCBidWNsZSwgYSB0aWVuZSBlbCB2YWxvciBkZTpcIiwgYSlcbiAgICAgYnJlYWtcbiAgIH1cbn1cbmBgYCJ9 -->
+<pre class="r"><code>#
+# Se rompe el bucle cuando a = 4
+a &lt;- 1
+for (i in 1:10){
+  a &lt;- a + 1
+  cat(&quot;Sigue, a tiene el valor de: &quot;, a, &quot;\n&quot;)
+   if (a == 4){
+     cat(&quot;Se rompe el bucle, a tiene el valor de:&quot;, a)
+     break
+   }
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU2lndWUsIGEgdGllbmUgZWwgdmFsb3IgZGU6ICAyIFxuU2lndWUsIGEgdGllbmUgZWwgdmFsb3IgZGU6ICAzIFxuU2lndWUsIGEgdGllbmUgZWwgdmFsb3IgZGU6ICA0IFxuU2Ugcm9tcGUgZWwgYnVjbGUsIGEgdGllbmUgZWwgdmFsb3IgZGU6IDRcbiJ9 -->
+<pre><code>Sigue, a tiene el valor de:  2 
+Sigue, a tiene el valor de:  3 
+Sigue, a tiene el valor de:  4 
+Se rompe el bucle, a tiene el valor de: 4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICBcbmBgYCJ9 -->
+<pre class="r"><code>  </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+</div>
+<div id="matrices" class="section level1">
+<h1>Matrices</h1>
+<p>Las matrices son una de las estructuras de datos más importantes y más usadas, en pocas palabras, las matrices son una tabla que contienen diferentes variables del mismo tipo.</p>
+<div id="como-definir-una-matriz-en-r" class="section level2">
+<h2>¿Como definir una matriz en R?</h2>
+<p>Para poder definir una matriz en R, se puede crear a partir de algunos vectores.</p>
+<div id="ejemplo-4" class="section level3">
+<h3>Ejemplo</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI1xuI01hdHJpeiBkZSBjYXNvcyBudWV2b3MgZGUgY292aWQtMTkgYWwgZMOtYSBlbiBhbGd1bm9zIHBhw61zZXNcblxuY292aWRfQ29sb21iaWE8LWMoOTkzNSwgNjEzNiwgODY5MiwgOTg5MylcbmNvdmlkX1ZlbmV6dWVsYTwtYygzOTUsIDM4MCwgNDQxLCAzODQpXG5jb3ZpZF9BcmdlbnRpbmE8LWMoOTU5OCwgMTIxNDUsMTA2NTIsMTE3NjgpXG5jb3ZpZCA8LSBtYXRyaXgoYyhjb3ZpZF9Db2xvbWJpYSwgY292aWRfVmVuZXp1ZWxhLCBjb3ZpZF9BcmdlbnRpbmEpLCBucm93ID0gNCwgbmNvbCA9IDMpXG5jb3ZpZFxuYGBgIn0= -->
+<pre class="r"><code>#
+#Matriz de casos nuevos de covid-19 al día en algunos países
+
+covid_Colombia&lt;-c(9935, 6136, 8692, 9893)
+covid_Venezuela&lt;-c(395, 380, 441, 384)
+covid_Argentina&lt;-c(9598, 12145,10652,11768)
+covid &lt;- matrix(c(covid_Colombia, covid_Venezuela, covid_Argentina), nrow = 4, ncol = 3)
+covid</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gIFssM11cblsxLF0gOTkzNSAgMzk1ICA5NTk4XG5bMixdIDYxMzYgIDM4MCAxMjE0NVxuWzMsXSA4NjkyICA0NDEgMTA2NTJcbls0LF0gOTg5MyAgMzg0IDExNzY4XG4ifQ== -->
+<pre><code>     [,1] [,2]  [,3]
+[1,] 9935  395  9598
+[2,] 6136  380 12145
+[3,] 8692  441 10652
+[4,] 9893  384 11768</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Ahora, para que se pueda brindar más información, es posible cambiar el título de las filas y columnas</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sbmFtZXMoY292aWQpIDwtIGMoJ0NvbG9tYmlhJywgJ1ZlbmV6dWVsYScsICdBcmdlbnRpbmEnKVxucm93bmFtZXMoY292aWQpIDwtIGMoXCIwMi0xMS0yMDIwXCIsIFwiMDMtMTEtMjAyMFwiLCBcIjA0LTExLTIwMjBcIiwgXCIwNS0xMS0yMDIwXCIpXG5jb3ZpZFxuYGBgIn0= -->
+<pre class="r"><code>colnames(covid) &lt;- c(&#39;Colombia&#39;, &#39;Venezuela&#39;, &#39;Argentina&#39;)
+rownames(covid) &lt;- c(&quot;02-11-2020&quot;, &quot;03-11-2020&quot;, &quot;04-11-2020&quot;, &quot;05-11-2020&quot;)
+covid</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBDb2xvbWJpYSBWZW5lenVlbGEgQXJnZW50aW5hXG4wMi0xMS0yMDIwICAgICA5OTM1ICAgICAgIDM5NSAgICAgIDk1OThcbjAzLTExLTIwMjAgICAgIDYxMzYgICAgICAgMzgwICAgICAxMjE0NVxuMDQtMTEtMjAyMCAgICAgODY5MiAgICAgICA0NDEgICAgIDEwNjUyXG4wNS0xMS0yMDIwICAgICA5ODkzICAgICAgIDM4NCAgICAgMTE3NjhcbiJ9 -->
+<pre><code>           Colombia Venezuela Argentina
+02-11-2020     9935       395      9598
+03-11-2020     6136       380     12145
+04-11-2020     8692       441     10652
+05-11-2020     9893       384     11768</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Escoger elementos de una matriz ## Operaciones matriciales</p>
+<p>Ahora que se sabe como crear una matriz, es importante mostrar como realizar operaciones matriciales con R.</p>
+</div>
+<div id="ejemplo-5" class="section level3">
+<h3>Ejemplo</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml6MSA8LSBtYXRyaXgoYyhjKDEsNCwtNSksYygyLDMsMSksYyg1LDMsMikpLCBucm93PTMsIG5jb2w9Mylcbm1hdHJpejIgPC0gbWF0cml4KGMoYyg5LC0xLDApLGMoLTEyLDIsOSksYygtMywyLC0xKSksIG5yb3c9MywgbmNvbD0zKVxubWF0cml6MSAgIyNJbXByaW1pciBtYXRyaXoxXG5gYGAifQ== -->
+<pre class="r"><code>matriz1 &lt;- matrix(c(c(1,4,-5),c(2,3,1),c(5,3,2)), nrow=3, ncol=3)
+matriz2 &lt;- matrix(c(c(9,-1,0),c(-12,2,9),c(-3,2,-1)), nrow=3, ncol=3)
+matriz1  ##Imprimir matriz1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICAxICAgIDIgICAgNVxuWzIsXSAgICA0ICAgIDMgICAgM1xuWzMsXSAgIC01ICAgIDEgICAgMlxuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    2    5
+[2,]    4    3    3
+[3,]   -5    1    2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml6MiAjI0lwcmltaXIgbWF0cml6MlxuYGBgIn0= -->
+<pre class="r"><code>matriz2 ##Iprimir matriz2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICA5ICAtMTIgICAtM1xuWzIsXSAgIC0xICAgIDIgICAgMlxuWzMsXSAgICAwICAgIDkgICAtMVxuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]    9  -12   -3
+[2,]   -1    2    2
+[3,]    0    9   -1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Para sumar matrices, solo basta con el comando +</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtYSA9IG1hdHJpejEgKyBtYXRyaXoyXG5zdW1hXG5gYGAifQ== -->
+<pre class="r"><code>suma = matriz1 + matriz2
+suma</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgIDEwICAtMTAgICAgMlxuWzIsXSAgICAzICAgIDUgICAgNVxuWzMsXSAgIC01ICAgMTAgICAgMVxuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]   10  -10    2
+[2,]    3    5    5
+[3,]   -5   10    1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVzdGEgPSBtYXRyaXoxIC0gbWF0cml6MlxucmVzdGFcbmBgYCJ9 -->
+<pre class="r"><code>resta = matriz1 - matriz2
+resta</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgIC04ICAgMTQgICAgOFxuWzIsXSAgICA1ICAgIDEgICAgMVxuWzMsXSAgIC01ICAgLTggICAgM1xuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]   -8   14    8
+[2,]    5    1    1
+[3,]   -5   -8    3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Multiplicación de matrices</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubXVsdGlwbGljYWNpb24gPC0gbWF0cml6MSUqJW1hdHJpejJcbm11bHRpcGxpY2FjaW9uXG5gYGAifQ== -->
+<pre class="r"><code>multiplicacion &lt;- matriz1%*%matriz2
+multiplicacion</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICA3ICAgMzcgICAtNFxuWzIsXSAgIDMzICAtMTUgICAtOVxuWzMsXSAgLTQ2ICAgODAgICAxNVxuIn0= -->
+<pre><code>     [,1] [,2] [,3]
+[1,]    7   37   -4
+[2,]   33  -15   -9
+[3,]  -46   80   15</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Concatenación de matrices</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF0cml6X2NvbmMgPC0gY2JpbmQobWF0cml6MSwgbWF0cml6Milcbm1hdHJpel9jb25jXG5gYGAifQ== -->
+<pre class="r"><code>matriz_conc &lt;- cbind(matriz1, matriz2)
+matriz_conc</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl0gWywzXSBbLDRdIFssNV0gWyw2XVxuWzEsXSAgICAxICAgIDIgICAgNSAgICA5ICAtMTIgICAtM1xuWzIsXSAgICA0ICAgIDMgICAgMyAgIC0xICAgIDIgICAgMlxuWzMsXSAgIC01ICAgIDEgICAgMiAgICAwICAgIDkgICAtMVxuIn0= -->
+<pre><code>     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    1    2    5    9  -12   -3
+[2,]    4    3    3   -1    2    2
+[3,]   -5    1    2    0    9   -1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+</div>
+</div>
+<div id="codigo" class="section level1">
+<h1>Codigo</h1>
+<!-- rnb-text-end -->
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIEVzdHJ1Y3R1cmFzIGRlIGNvbnRyb2wNCg0KTGFzIGVzdHJ1Y3R1cmFzIGRlIGNvbnRyb2wsIHNvbiB1bmEgZGUgbGFzIHBhcnRlcyBtw6FzIGZ1bmRhbWVudGFsZXMgZW4gbG9zIGxlbmd1YWplcyBkZSBwcm9ncmFtYWNpw7NuLCBkZWJpZG8gYSBxdcOpLCBjb21vIHN1IG5vbWJyZSBsbyBpbmRpY2EsIGdyYWNpYXMgYSBlbGxhcyBzZSBwdWVkZSBjb250cm9sYXIgZWwgY8OzZGlnbyBkZSBsYSBtYW5lcmEgcXVlIGVsIHVzdWFyaW8gZGVzZcOpLiBFbiBlc3RhIHNlY2Npw7NuIHNlIHZlcsOhbiBsYXMgZXN0cnVjdHVyYXMgbcOhcyBjb25vY2lkYXMgeSDDunRpbGVzLg0KDQojIyBJZiwgZWxzZQ0KDQpDb21vIHlhIGVzIGNvbm9jaWRvLCBsYSBlc3RydWN0dXJhIF9faWZfXyBlcyB1c2FkYSBjdWFuZG8gZGVzZWFtb3MgcXVlIHVuYSBvcGVyYWNpw7NuIHNlIGVqZWN1dGUgw7puaWNhbWVudGUgc2kgc2UgY3VtcGxlIHVuYSBjb25kaWNpw7NuIGVzcGVjaWZpY2FkYS4NCg0KUG9yIG90cm8gbGFkbywgbGEgc2VudGVuY2lhIF9fZWxzZV9fIGVzIHVzYWRhIHBhcmEgaW5kaWNhciBxdWUgc2UgZGViZSBoYWNlciBzaSBsYSBjb25kaWNpw7NuIF9faWZfXyBubyBzZSBjdW1wbGUuDQoNCiMjIyBFamVtcGxvDQoNCmBgYHtyfQ0KDQojU2kgc2UgY3VtcGxlIGxhIGNvbmRpY2nDs24gaWYNCmlmKDEwPjEpew0KICAiVmVyZGFkZXJvIg0KfSBlbHNlIHsNCiAgIkZhbHNvIg0KfQ0KDQpgYGANCg0KYGBge3J9DQojU2kgbm8gc2UgY3VtcGxlIGxhIGNvbmRpY2nDs24gaWYNCmlmKDE5PDEpew0KICAiVmVyZGFkZXJvIg0KfSBlbHNlIHsNCiAgIkZhbHNvIg0KfQ0KYGBgDQoNCg0KDQojIyBGb3INCg0KRXN0YSBlc3RydWN0dXJhLCBwZXJtaXRlIGVqZWN1dGFyIGPDs2RpZ28gZW4gbG9vcCwgcmVhbGl6YW5kbyBsYSBtaXNtYSBvcGVyYWNpw7NuIHBhcmEgY2FkYSBlbGVtZW50byBkZSB1biBjb25qdW50byBkZSBkYXRvcy4NCg0KIyMjIEVqZW1wbG8NCg0KYGBge3J9DQojTGUgcmVzdGEgMTAgdW5pZGFkZXMgYSBjYWRhIGVsZW1lbnRvIGRlbCB2ZWN0b3INCnZlY3RvciA8LSAyOjEwDQpmb3IobnVtZXJvIGluIHZlY3Rvcil7DQogIHByaW50KG51bWVyby0xMCkNCn0NCmBgYA0KUG9yIG90cm8gbGFkbywgc2UgcHVlZGUgdXNhciBvdHJhIGVzdHJ1Y3R1cmENCmBgYHtyfQ0KIw0KI0ltcHJpbWUgbG9zIGVsZW1lbnRvcyBkZSB1biB2ZWN0b3IgYWwgY3VhZHJhZG8NCnZlY3RvciA8LSAxOjUNCmZvciAoaSBpbiB2ZWN0b3Ipew0KICBwcmludCh2ZWN0b3JbaV1eMikNCn0NCmBgYA0KDQojIyBXaGlsZQ0KDQpFcyB1bmEgZXN0cnVjdHVyYSBkZSB0aXBvIGJ1Y2xlLCBsYSBjdWFsIG9jdXJyZSBtaWVudHJhcyB1bmEgY29uZGljacOzbiBzZWEgdmVyZGFkZXJhLg0KDQojIyMgRWplbXBsbw0KYGBge3J9DQp1bWJyYWwgPC0gMg0Kbm90YV9TZW1lc3RyZSA8LSAwDQplc3R1ZGlhciA8LSAxDQoNCndoaWxlKG5vdGFfU2VtZXN0cmU8PXVtYnJhbCl7DQogIGNhdCgiVmEgcGVyZGllbmRvIGxhIG1hdGVyaWEsIG5vdGEgPSIsIG5vdGFfU2VtZXN0cmUsICJcbiIpDQogIG5vdGFfU2VtZXN0cmUgPC0gbm90YV9TZW1lc3RyZSArIGVzdHVkaWFyDQp9DQpgYGANCg0KDQojIyBCcmVhaw0KTGEgZnVuY2nDs24gZGUgX19icmVha19fIGVzIF9faW50ZXJydW1waXJfXyB1biBidWNsZSBjdWFuZG8gc2UgY3VtcGxlIHVuYSBjb25kaWNpw7NuLg0KDQojIyMgRWplbXBsbw0KYGBge3J9DQojDQojIFNlIHJvbXBlIGVsIGJ1Y2xlIGN1YW5kbyBhID0gNA0KYSA8LSAxDQpmb3IgKGkgaW4gMToxMCl7DQogIGEgPC0gYSArIDENCiAgY2F0KCJTaWd1ZSwgYSB0aWVuZSBlbCB2YWxvciBkZTogIiwgYSwgIlxuIikNCiAgIGlmIChhID09IDQpew0KICAgICBjYXQoIlNlIHJvbXBlIGVsIGJ1Y2xlLCBhIHRpZW5lIGVsIHZhbG9yIGRlOiIsIGEpDQogICAgIGJyZWFrDQogICB9DQp9DQogIA0KYGBgDQoNCg0KIyBNYXRyaWNlcw0KDQpMYXMgbWF0cmljZXMgc29uIHVuYSBkZSBsYXMgZXN0cnVjdHVyYXMgZGUgZGF0b3MgbcOhcyBpbXBvcnRhbnRlcyB5IG3DoXMgdXNhZGFzLCBlbiBwb2NhcyBwYWxhYnJhcywgbGFzIG1hdHJpY2VzIHNvbiB1bmEgdGFibGEgcXVlIGNvbnRpZW5lbiBkaWZlcmVudGVzIHZhcmlhYmxlcyBkZWwgbWlzbW8gdGlwby4NCg0KIyMgwr9Db21vIGRlZmluaXIgdW5hIG1hdHJpeiBlbiBSPw0KDQpQYXJhIHBvZGVyIGRlZmluaXIgdW5hIG1hdHJpeiBlbiBSLCBzZSBwdWVkZSBjcmVhciBhIHBhcnRpciBkZSBhbGd1bm9zIHZlY3RvcmVzLg0KDQojIyMgRWplbXBsbw0KDQpgYGB7cn0NCiMNCiNNYXRyaXogZGUgY2Fzb3MgbnVldm9zIGRlIGNvdmlkLTE5IGFsIGTDrWEgZW4gYWxndW5vcyBwYcOtc2VzDQoNCmNvdmlkX0NvbG9tYmlhPC1jKDk5MzUsIDYxMzYsIDg2OTIsIDk4OTMpDQpjb3ZpZF9WZW5lenVlbGE8LWMoMzk1LCAzODAsIDQ0MSwgMzg0KQ0KY292aWRfQXJnZW50aW5hPC1jKDk1OTgsIDEyMTQ1LDEwNjUyLDExNzY4KQ0KY292aWQgPC0gbWF0cml4KGMoY292aWRfQ29sb21iaWEsIGNvdmlkX1ZlbmV6dWVsYSwgY292aWRfQXJnZW50aW5hKSwgbnJvdyA9IDQsIG5jb2wgPSAzKQ0KY292aWQNCmBgYA0KQWhvcmEsIHBhcmEgcXVlIHNlIHB1ZWRhIGJyaW5kYXIgbcOhcyBpbmZvcm1hY2nDs24sIGVzIHBvc2libGUgY2FtYmlhciBlbCB0w610dWxvIGRlIGxhcyBmaWxhcyB5IGNvbHVtbmFzDQoNCmBgYHtyfQ0KY29sbmFtZXMoY292aWQpIDwtIGMoJ0NvbG9tYmlhJywgJ1ZlbmV6dWVsYScsICdBcmdlbnRpbmEnKQ0Kcm93bmFtZXMoY292aWQpIDwtIGMoIjAyLTExLTIwMjAiLCAiMDMtMTEtMjAyMCIsICIwNC0xMS0yMDIwIiwgIjA1LTExLTIwMjAiKQ0KY292aWQNCmBgYA0KRXNjb2dlciBlbGVtZW50b3MgZGUgdW5hIG1hdHJpeg0KIyMgT3BlcmFjaW9uZXMgbWF0cmljaWFsZXMNCg0KQWhvcmEgcXVlIHNlIHNhYmUgY29tbyBjcmVhciB1bmEgbWF0cml6LCBlcyBpbXBvcnRhbnRlIG1vc3RyYXIgY29tbyByZWFsaXphciBvcGVyYWNpb25lcyBtYXRyaWNpYWxlcyBjb24gUi4NCg0KIyMjIEVqZW1wbG8NCmBgYHtyfQ0KbWF0cml6MSA8LSBtYXRyaXgoYyhjKDEsNCwtNSksYygyLDMsMSksYyg1LDMsMikpLCBucm93PTMsIG5jb2w9MykNCm1hdHJpejIgPC0gbWF0cml4KGMoYyg5LC0xLDApLGMoLTEyLDIsOSksYygtMywyLC0xKSksIG5yb3c9MywgbmNvbD0zKQ0KbWF0cml6MSAgIyNJbXByaW1pciBtYXRyaXoxDQptYXRyaXoyICMjSXByaW1pciBtYXRyaXoyDQpgYGANCg0KUGFyYSBzdW1hciBtYXRyaWNlcywgc29sbyBiYXN0YSBjb24gZWwgY29tYW5kbyArDQoNCmBgYHtyfQ0Kc3VtYSA9IG1hdHJpejEgKyBtYXRyaXoyDQpzdW1hDQpgYGANCmBgYHtyfQ0KcmVzdGEgPSBtYXRyaXoxIC0gbWF0cml6Mg0KcmVzdGENCmBgYA0KTXVsdGlwbGljYWNpw7NuIGRlIG1hdHJpY2VzDQpgYGB7cn0NCm11bHRpcGxpY2FjaW9uIDwtIG1hdHJpejElKiVtYXRyaXoyDQptdWx0aXBsaWNhY2lvbg0KYGBgDQpDb25jYXRlbmFjacOzbiBkZSBtYXRyaWNlcw0KYGBge3J9DQptYXRyaXpfY29uYyA8LSBjYmluZChtYXRyaXoxLCBtYXRyaXoyKQ0KbWF0cml6X2NvbmMNCmBgYA0KIyBDb2RpZ28=</div>
 
 
 

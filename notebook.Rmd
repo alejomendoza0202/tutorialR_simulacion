@@ -3,8 +3,158 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+# Estructuras de control
+
+Las estructuras de control, son una de las partes más fundamentales en los lenguajes de programación, debido a qué, como su nombre lo indica, gracias a ellas se puede controlar el código de la manera que el usuario deseé. En esta sección se verán las estructuras más conocidas y útiles.
+
+## If, else
+
+Como ya es conocido, la estructura __if__ es usada cuando deseamos que una operación se ejecute únicamente si se cumple una condición especificada.
+
+Por otro lado, la sentencia __else__ es usada para indicar que se debe hacer si la condición __if__ no se cumple.
+
+### Ejemplo
+
 ```{r}
-plot(cars)
+
+#Si se cumple la condición if
+if(10>1){
+  "Verdadero"
+} else {
+  "Falso"
+}
+
+```
+
+```{r}
+#Si no se cumple la condición if
+if(19<1){
+  "Verdadero"
+} else {
+  "Falso"
+}
 ```
 
 
+
+## For
+
+Esta estructura, permite ejecutar código en loop, realizando la misma operación para cada elemento de un conjunto de datos.
+
+### Ejemplo
+
+```{r}
+#Le resta 10 unidades a cada elemento del vector
+vector <- 2:10
+for(numero in vector){
+  print(numero-10)
+}
+```
+Por otro lado, se puede usar otra estructura
+```{r}
+#
+#Imprime los elementos de un vector al cuadrado
+vector <- 1:5
+for (i in vector){
+  print(vector[i]^2)
+}
+```
+
+## While
+
+Es una estructura de tipo bucle, la cual ocurre mientras una condición sea verdadera.
+
+### Ejemplo
+```{r}
+umbral <- 2
+nota_Semestre <- 0
+estudiar <- 1
+
+while(nota_Semestre<=umbral){
+  cat("Va perdiendo la materia, nota =", nota_Semestre, "\n")
+  nota_Semestre <- nota_Semestre + estudiar
+}
+```
+
+
+## Break
+La función de __break__ es __interrumpir__ un bucle cuando se cumple una condición.
+
+### Ejemplo
+```{r}
+#
+# Se rompe el bucle cuando a = 4
+a <- 1
+for (i in 1:10){
+  a <- a + 1
+  cat("Sigue, a tiene el valor de: ", a, "\n")
+   if (a == 4){
+     cat("Se rompe el bucle, a tiene el valor de:", a)
+     break
+   }
+}
+  
+```
+
+
+# Matrices
+
+Las matrices son una de las estructuras de datos más importantes y más usadas, en pocas palabras, las matrices son una tabla que contienen diferentes variables del mismo tipo.
+
+## ¿Como definir una matriz en R?
+
+Para poder definir una matriz en R, se puede crear a partir de algunos vectores.
+
+### Ejemplo
+
+```{r}
+#
+#Matriz de casos nuevos de covid-19 al día en algunos países
+
+covid_Colombia<-c(9935, 6136, 8692, 9893)
+covid_Venezuela<-c(395, 380, 441, 384)
+covid_Argentina<-c(9598, 12145,10652,11768)
+covid <- matrix(c(covid_Colombia, covid_Venezuela, covid_Argentina), nrow = 4, ncol = 3)
+covid
+```
+Ahora, para que se pueda brindar más información, es posible cambiar el título de las filas y columnas
+
+```{r}
+colnames(covid) <- c('Colombia', 'Venezuela', 'Argentina')
+rownames(covid) <- c("02-11-2020", "03-11-2020", "04-11-2020", "05-11-2020")
+covid
+```
+Escoger elementos de una matriz
+## Operaciones matriciales
+
+Ahora que se sabe como crear una matriz, es importante mostrar como realizar operaciones matriciales con R.
+
+### Ejemplo
+```{r}
+matriz1 <- matrix(c(c(1,4,-5),c(2,3,1),c(5,3,2)), nrow=3, ncol=3)
+matriz2 <- matrix(c(c(9,-1,0),c(-12,2,9),c(-3,2,-1)), nrow=3, ncol=3)
+matriz1  ##Imprimir matriz1
+matriz2 ##Iprimir matriz2
+```
+
+Para sumar matrices, solo basta con el comando +
+
+```{r}
+suma = matriz1 + matriz2
+suma
+```
+```{r}
+resta = matriz1 - matriz2
+resta
+```
+Multiplicación de matrices
+```{r}
+multiplicacion <- matriz1%*%matriz2
+multiplicacion
+```
+Concatenación de matrices
+```{r}
+matriz_conc <- cbind(matriz1, matriz2)
+matriz_conc
+```
+# Codigo
